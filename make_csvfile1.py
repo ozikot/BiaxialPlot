@@ -12,7 +12,7 @@ dn = np.random.choice([-1, 1], size=ds)
 p0 = 100
 swalk = np.cumsum(dn) + p0
 
-# Generate data drame
+# Generate data frame
 df = pd.DataFrame({
     'Time' : pd.date_range('2018/09/01 00:00:00', periods=ds, freq='1S'),
     'bpm' : pd.Series(swalk)
