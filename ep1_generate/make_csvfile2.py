@@ -18,4 +18,4 @@ df = pd.DataFrame({
 })
 
 # データフレームをCSVファイル形式で保存
-df.to_csv('temp_bs.csv', index=None)
+df.to_csv('..//csv_file//temp_bs.csv', index=None)
