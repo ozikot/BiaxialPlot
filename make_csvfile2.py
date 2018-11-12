@@ -7,15 +7,15 @@ ds = 30000
 
 # 幾何ランダムウォークで疑似的な心拍データの生成
 dn = np.random.choice([-1, 1], size=ds)
-p0 = 100
+p0 = 20
 gwalk = np.cumprod(np.exp(dn * 0.001)) * p0
 pd.Series(gwalk).plot()
 
 # データフレームを生成
 df = pd.DataFrame({
-    'Time' : pd.date_range('2018/09/01 00:00:00', periods=ds, freq='1S'),
-    'BPM' : pd.Series(gwalk)
+    'Time' : pd.Series([i * 1000000 for i in range(0, ds)]),
+    'Temperature' : pd.Series(gwalk)
 })
 
 # データフレームをCSVファイル形式で保存
-df.to_csv('heartbeat.csv', index=None)
+df.to_csv('temp_bs.csv', index=None)
