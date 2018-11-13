@@ -7,11 +7,9 @@ def main():
 
     # 二つのデータをマージ
     df_me = pd.merge(df_hb, df_tm)
-    
-    print(df_me.tail(5))
 
     # CSVファイルに書き込み
-    # df_me.to_csv('..//csv_file//merged.csv', index=False)
+    df_me.to_csv('..//csv_file//merged.csv', index=False)
 
 if __name__ == '__main__':
     main()
