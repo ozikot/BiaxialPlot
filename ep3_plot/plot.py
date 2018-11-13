@@ -18,8 +18,9 @@ def main():
     # BPMを左y軸、Temperatureを右のy軸(secondary_y)とした二軸プロット
     # gridの設定は後で行うためFalseにしておく
     # mark_rightは右y軸の凡例表示に(right)を追加することを意味する　デフォルトはTrue
-    ax = df.plot(secondary_y=['Temperature'], figsize=(20, 5), style=['-', '-.'], grid=False, fontsize=15, mark_right=False)
+    ax = df.plot(secondary_y=['Temperature'], figsize=(20, 5), style=['-', '-.'], grid=True, fontsize=15, mark_right=False)
 
+    plt.show()
 
     #-#-# ラベル #-#-#
     
