@@ -1,8 +1,17 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 
-# 心拍と体表温度のCSVファイルを読み込む
-df_hb = pd.read_csv('..//csv_file//heartbeat.csv')
-df_tm = pd.read_csv('..//temp_bs_edited.csv')
+def main():
+    # 心拍と体表温度のCSVファイルを読み込む
+    df_hb = pd.read_csv('..//csv_file//heartbeat.csv')
+    df_tm = pd.read_csv('..//csv_file//temp_bs_edited.csv')
 
-print(df_tm.head())
+    # 二つのデータをマージ
+    df_me = pd.merge(df_hb, df_tm)
+    
+    print(df_me.tail(5))
+
+    # CSVファイルに書き込み
+    # df_me.to_csv('..//csv_file//merged.csv', index=False)
+
+if __name__ == '__main__':
+    main()
